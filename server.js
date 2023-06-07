@@ -16,7 +16,8 @@ app.get("/contact", (req, res) => {
   res.send("This is contact page.");
 });
 
-app.listen(5000, () => console.log("Server running on localhost:5000"));
+const port = process.env.PORT || 5000;
+app.listen(port, () => console.log("Server running on localhost:5000"));
 
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
